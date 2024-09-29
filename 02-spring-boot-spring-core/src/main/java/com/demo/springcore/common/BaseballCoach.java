@@ -1,5 +1,7 @@
 package com.demo.springcore.common;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
@@ -8,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 // @Lazy
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//@ Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BaseballCoach implements ICoach{
 
     public BaseballCoach() {
@@ -19,5 +21,16 @@ public class BaseballCoach implements ICoach{
     @Primary
     public String getDailyWorkOut() {
         return "Spend 30 menutes in battling practice";
+    }
+
+    //    Define init method
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println("in doMyStartUpStuff: " + getClass().getSimpleName());
+    }
+
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println("in doMyCleanupStuff: " + getClass().getSimpleName());
     }
 }

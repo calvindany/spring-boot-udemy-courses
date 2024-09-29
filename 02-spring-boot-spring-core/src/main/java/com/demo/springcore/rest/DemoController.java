@@ -1,5 +1,6 @@
-package com.demo.springcore;
+package com.demo.springcore.rest;
 
+import com.demo.springcore.common.ICoach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

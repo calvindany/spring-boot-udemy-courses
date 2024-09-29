@@ -10,18 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     private ICoach myCoach;
 
-//    Define constructor for dependency injection
+    // Define constructor for dependency injection
     @Autowired
     public DemoController(@Qualifier("baseballCoach") ICoach theCoach){
         System.out.println("In Constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
     }
 
-//    Define Setter Injection
-//    @Autowired
-//    public void setCoach(@Qualifier("CricketCoach") ICoach coach) {
-//        myCoach = coach;
-//    }
+    // Define Setter Injection
+    /*
+    @Autowired
+    public void setCoach(@Qualifier("CricketCoach") ICoach coach) {
+        myCoach = coach;
+    }
+    */
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {

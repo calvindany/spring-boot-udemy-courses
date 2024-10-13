@@ -17,7 +17,7 @@ public class DemoController {
     public DemoController(
             @Qualifier("baseballCoach") ICoach theCoach,
             @Qualifier("baseballCoach") ICoach theAnotherCoach,
-            @Qualifier("swimCoach") ICoach newSwimCoach
+            @Qualifier("custombean") ICoach newSwimCoach
     ){
         System.out.println("In Constructor: " + getClass().getSimpleName());
         myCoach = theCoach;

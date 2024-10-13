@@ -7,7 +7,7 @@ import com.demo.springcore.common.ICoach;
 
 @Configuration
 public class SportConfig {
-    @Bean
+    @Bean("custombean")
     public ICoach swimCoach() {
         return new SwimCoach();
     }

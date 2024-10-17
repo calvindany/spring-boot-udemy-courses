@@ -1,5 +1,7 @@
 package com.example.demoapp;
 
+import com.example.demoapp.dao.StudentDAO;
+import com.example.demoapp.entity.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +14,20 @@ public class DemoappApplication {
 		SpringApplication.run(DemoappApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner commandLineRunner(String[] args){
+	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
-			System.out.println("Hello World");
+			createStudent(studentDAO);
 		};
+	}
+
+	private void createStudent(StudentDAO studentDAO) {
+		System.out.println("Starting Insert Student Data Process");
+
+		Student tempStudent = new Student("Calvin", "Dany", "calvindany@mail.com");
+
+		System.out.println("Saving student data");
+		studentDAO.save(tempStudent);
+
+		System.out.println();
 	}
 }

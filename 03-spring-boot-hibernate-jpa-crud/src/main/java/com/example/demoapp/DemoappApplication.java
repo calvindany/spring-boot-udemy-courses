@@ -20,11 +20,19 @@ public class DemoappApplication {
 		return runner -> {
 //			createStudent(studentDAO);
 //			createMultipleStudent(studentDAO);
-			updateStudent(studentDAO, 1);
+//			updateStudent(studentDAO, 1);
 //			readAllStudent(studentDAO);
 //			readStudentByLastName(studentDAO);
 //			readStudent(studentDAO, 1);
+			deleteStudent(studentDAO, 1);
 		};
+	}
+
+	private void deleteStudent(StudentDAO studentDAO, int id) {
+		System.out.println("Starting delete student data with id : " + id);
+		studentDAO.delete(id);
+
+		System.out.println("Success delete student data");
 	}
 
 	private void updateStudent(StudentDAO studentDAO, int id) {

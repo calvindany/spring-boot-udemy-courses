@@ -14,4 +14,6 @@ public interface StudentDAO {
     void save(Student theStudent);
 
     void update(Student updatedData);
+
+    void delete(int id);
 }

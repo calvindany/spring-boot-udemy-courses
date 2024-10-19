@@ -19,13 +19,13 @@ public class DemoappApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
 //			createStudent(studentDAO);
-//			createMultipleStudent(studentDAO);
+			createMultipleStudent(studentDAO);
 //			updateStudent(studentDAO, 1);
 //			readAllStudent(studentDAO);
 //			readStudentByLastName(studentDAO);
 //			readStudent(studentDAO, 1);
 //			deleteStudent(studentDAO, 1);
-			deleteAllStudent(studentDAO);
+//			deleteAllStudent(studentDAO);
 		};
 	}
 

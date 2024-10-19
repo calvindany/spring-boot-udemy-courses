@@ -20,9 +20,20 @@ public class DemoappApplication {
 		return runner -> {
 //			createStudent(studentDAO);
 //			createMultipleStudent(studentDAO);
-			readAllStudent(studentDAO);
+//			readAllStudent(studentDAO);
+			readStudentByLastName(studentDAO);
 //			readStudent(studentDAO, 1);
 		};
+	}
+
+	private void readStudentByLastName(StudentDAO studentDAO) {
+		final String last_name = "Doe";
+
+		List<Student> student = studentDAO.findByLastName(last_name);
+
+		for(Student temp : student) {
+			System.out.println(temp);
+		}
 	}
 
 	public void readAllStudent(StudentDAO studentDAO) {

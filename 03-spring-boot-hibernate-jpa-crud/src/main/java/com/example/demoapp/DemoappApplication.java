@@ -20,10 +20,28 @@ public class DemoappApplication {
 		return runner -> {
 //			createStudent(studentDAO);
 //			createMultipleStudent(studentDAO);
+			updateStudent(studentDAO, 1);
 //			readAllStudent(studentDAO);
-			readStudentByLastName(studentDAO);
+//			readStudentByLastName(studentDAO);
 //			readStudent(studentDAO, 1);
 		};
+	}
+
+	private void updateStudent(StudentDAO studentDAO, int id) {
+		System.out.println("Retreive student data with id: " + id);
+		Student getStudentData = studentDAO.findById(id);
+		System.out.println("Gotten Data: " + getStudentData);
+
+		// Updating firstName data on getStudentData
+		getStudentData.setFirstName("Updated First Name");
+
+		studentDAO.update(getStudentData);
+
+		System.out.println("Finish updating student data");
+		System.out.println("Data with id " + id + " after updated");
+		getStudentData = studentDAO.findById(id);
+		System.out.println(getStudentData);
+
 	}
 
 	private void readStudentByLastName(StudentDAO studentDAO) {

@@ -2,8 +2,6 @@ package com.example.demoapp.entity;
 
 import jakarta.persistence.*;
 
-import javax.annotation.processing.Generated;
-
 @Entity
 @Table(name="student")
 public class Student {
@@ -22,6 +20,9 @@ public class Student {
 
     @Column(name = "email")
     private String email;
+
+    // Define default constructor
+    public Student() {}
 
     // Define constructor
     public Student(String first_name, String last_name, String email) {

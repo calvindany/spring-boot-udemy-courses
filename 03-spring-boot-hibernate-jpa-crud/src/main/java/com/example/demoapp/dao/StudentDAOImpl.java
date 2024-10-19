@@ -9,11 +9,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class StudentDAOImpl implements StudentDAO {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public StudentDAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    @Override
+    public Student findById(int id) {
+        return entityManager.find(Student.class, id);
     }
 
     @Override

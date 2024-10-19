@@ -17,8 +17,17 @@ public class DemoappApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
 //			createStudent(studentDAO);
-			createMultipleStudent(studentDAO);
+//			createMultipleStudent(studentDAO);
+			readStudent(studentDAO, 1);
 		};
+	}
+
+	public void readStudent(StudentDAO studentDAO, int id) {
+		System.out.println("Start reading a Student with ID: " + id);
+
+		Student student = studentDAO.findById(id);
+
+		System.out.println("Found student: " + student);
 	}
 
 	public void createMultipleStudent(StudentDAO studentDAO) {

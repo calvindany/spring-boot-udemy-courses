@@ -19,11 +19,45 @@ public class DemoappApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
 //			createStudent(studentDAO);
-//			createMultipleStudent(studentDAO);
+			createMultipleStudent(studentDAO);
+//			updateStudent(studentDAO, 1);
 //			readAllStudent(studentDAO);
-			readStudentByLastName(studentDAO);
+//			readStudentByLastName(studentDAO);
 //			readStudent(studentDAO, 1);
+//			deleteStudent(studentDAO, 1);
+//			deleteAllStudent(studentDAO);
 		};
+	}
+
+	private void deleteAllStudent(StudentDAO studentDAO) {
+		System.out.println("Start delete all data");
+		int deletedRows = studentDAO.deleteAll();
+
+		System.out.println("Success delete data: " + deletedRows);
+	}
+
+	private void deleteStudent(StudentDAO studentDAO, int id) {
+		System.out.println("Starting delete student data with id : " + id);
+		studentDAO.delete(id);
+
+		System.out.println("Success delete student data");
+	}
+
+	private void updateStudent(StudentDAO studentDAO, int id) {
+		System.out.println("Retreive student data with id: " + id);
+		Student getStudentData = studentDAO.findById(id);
+		System.out.println("Gotten Data: " + getStudentData);
+
+		// Updating firstName data on getStudentData
+		getStudentData.setFirstName("Updated First Name");
+
+		studentDAO.update(getStudentData);
+
+		System.out.println("Finish updating student data");
+		System.out.println("Data with id " + id + " after updated");
+		getStudentData = studentDAO.findById(id);
+		System.out.println(getStudentData);
+
 	}
 
 	private void readStudentByLastName(StudentDAO studentDAO) {

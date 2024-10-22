@@ -25,4 +25,27 @@ public class EmployeeDAO implements IEmployeeDAO{
 
         return employees;
     }
+
+    @Override
+    public Employee findById(int id) {
+        Employee employee = entityManager.find(Employee.class, id);
+
+        return employee;
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        Employee emp = entityManager.merge(employee);
+
+        // Return id of inserted data
+        return emp;
+    }
+
+    @Override
+    public void deleteById(int id) {
+
+        Employee emp = entityManager.find(Employee.class, id);
+
+        entityManager.remove(emp);
+    }
 }

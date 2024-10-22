@@ -1,4 +1,4 @@
-package com.example.demoapp.rest;
+package com.example.demoapp.rest.archive;
 
 public class StudentErrorResponse {
     private int status;

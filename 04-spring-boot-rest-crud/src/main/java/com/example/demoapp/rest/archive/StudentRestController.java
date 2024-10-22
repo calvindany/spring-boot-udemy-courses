@@ -1,10 +1,7 @@
-package com.example.demoapp.rest;
+package com.example.demoapp.rest.archive;
 
-import com.example.demoapp.entity.Student;
+import com.example.demoapp.entity.archive.Student;
 import jakarta.annotation.PostConstruct;
-import org.apache.coyote.Response;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

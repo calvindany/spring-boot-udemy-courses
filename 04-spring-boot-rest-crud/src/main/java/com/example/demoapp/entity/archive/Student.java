@@ -1,4 +1,4 @@
-package com.example.demoapp.entity;
+package com.example.demoapp.entity.archive;
 
 
 public class Student {

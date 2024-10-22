@@ -1,4 +1,4 @@
-package com.example.demoapp.rest;
+package com.example.demoapp.rest.archive;
 
 public class StudentNotFoundException extends RuntimeException {
     public StudentNotFoundException(String message) {

@@ -1,4 +1,4 @@
-package com.example.demoapp.rest;
+package com.example.demoapp.rest.archive;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

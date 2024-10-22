@@ -32,6 +32,14 @@ public class Employee {
         return firstName;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -48,7 +56,7 @@ public class Employee {
         return email;
     }
 
-    public void setEmail(String username) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -58,7 +66,7 @@ public class Employee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", username='" + email + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
